@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module GameLife</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>GameLife</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Calexander%5Cpycharmprojects%5Clifeg%5Cgamelife.py">c:\users\alexander\pycharmprojects\lifeg\gamelife.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pygame.html">pygame</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="GameLife.html#GameLife">GameLife</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="GameLife">class <strong>GameLife</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#GameLife">GameLife</a>(screen_width=800,&nbsp;screen_height=600,&nbsp;cell_size=10,&nbsp;alive_color=(0,&nbsp;255,&nbsp;255),&nbsp;dead_color=(0,&nbsp;0,&nbsp;0),&nbsp;max_fps=10)<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="GameLife-__init__"><strong>__init__</strong></a>(self, screen_width=800, screen_height=600, cell_size=10, alive_color=(0, 255, 255), dead_color=(0, 0, 0), max_fps=10)</dt><dd><tt>Инициализировать&nbsp;сетку,&nbsp;установить&nbsp;состояние&nbsp;игры&nbsp;по&nbsp;умолчанию,&nbsp;инициализировать&nbsp;экран<br>
+:param&nbsp;screen_width:&nbsp;Ширина&nbsp;игрового&nbsp;окна<br>
+:param&nbsp;screen_height:&nbsp;Высота&nbsp;игрового&nbsp;окна<br>
+:param&nbsp;cell_size:&nbsp;Диаметр&nbsp;кругов<br>
+:param&nbsp;alive_color:&nbsp;RGB,&nbsp;например&nbsp;(255&nbsp;,255,255)&nbsp;для&nbsp;ячеек<br>
+:param&nbsp;dead_color:&nbsp;Мертвые&nbsp;клиенты&nbsp;RGB<br>
+:param&nbsp;max_fps:&nbsp;максимальное&nbsp;количество&nbsp;кадров&nbsp;в&nbsp;секунду</tt></dd></dl>
+
+<dl><dt><a name="GameLife-check_cell_neighbors"><strong>check_cell_neighbors</strong></a>(self, row_index, col_index)</dt><dd><tt>Получение&nbsp;количество&nbsp;живых&nbsp;соседних&nbsp;ячеек&nbsp;и&nbsp;определение&nbsp;состояние&nbsp;ячейки<br>
+для&nbsp;следующего&nbsp;поколения.&nbsp;Определяет,&nbsp;живет&nbsp;ли&nbsp;он,&nbsp;умирает,&nbsp;выживает&nbsp;или&nbsp;рождается.<br>
+:param&nbsp;row_index:&nbsp;Номер&nbsp;строки&nbsp;ячейки&nbsp;для&nbsp;проверки<br>
+:param&nbsp;col_index:&nbsp;Номер&nbsp;столбца&nbsp;ячейки&nbsp;для&nbsp;проверки<br>
+:return:&nbsp;Состояние,&nbsp;в&nbsp;котором&nbsp;ячейка&nbsp;должна&nbsp;быть&nbsp;в&nbsp;следующем&nbsp;поколении&nbsp;(0&nbsp;или&nbsp;1)</tt></dd></dl>
+
+<dl><dt><a name="GameLife-clear_screen"><strong>clear_screen</strong></a>(self)</dt><dd><tt>Заполнить&nbsp;весь&nbsp;экран&nbsp;мертвым&nbsp;цветом<br>
+:return:</tt></dd></dl>
+
+<dl><dt><a name="GameLife-draw_grid"><strong>draw_grid</strong></a>(self)</dt><dd><tt>Учитывая&nbsp;состояние&nbsp;сетки&nbsp;и&nbsp;ячеек,&nbsp;нарисует&nbsp;ячейки&nbsp;на&nbsp;экране<br>
+:return:</tt></dd></dl>
+
+<dl><dt><a name="GameLife-get_cell"><strong>get_cell</strong></a>(self, row_num, col_num)</dt><dd><tt>Получить&nbsp;живое&nbsp;/&nbsp;мертвое&nbsp;(0/1)&nbsp;состояние&nbsp;определенной&nbsp;ячейки&nbsp;в&nbsp;активной&nbsp;сетке<br>
+:param&nbsp;row_num:&nbsp;номер&nbsp;стобца<br>
+:param&nbsp;col_num:&nbsp;номеря&nbsp;колонки<br>
+:return:&nbsp;0&nbsp;или&nbsp;1&nbsp;в&nbsp;зависимости&nbsp;от&nbsp;состояния&nbsp;ячейки.&nbsp;По&nbsp;умолчанию&nbsp;0&nbsp;(мертвый)</tt></dd></dl>
+
+<dl><dt><a name="GameLife-handle_events"><strong>handle_events</strong></a>(self)</dt><dd><tt>Обработка&nbsp;любых&nbsp;нажатий&nbsp;клавиш&nbsp;и&nbsp;мыши<br>
+s/ы&nbsp;-&nbsp;старт/начало<br>
+q/й&nbsp;-&nbsp;выход<br>
+r/к&nbsp;-&nbsp;случайные&nbsp;значения&nbsp;на&nbsp;сетке<br>
+:return:</tt></dd></dl>
+
+<dl><dt><a name="GameLife-inactive_grid"><strong>inactive_grid</strong></a>(self)</dt><dd><tt>Простая&nbsp;вспомогательная&nbsp;функция&nbsp;для&nbsp;получения&nbsp;индекса&nbsp;неактивной&nbsp;сетки<br>
+Если&nbsp;активная&nbsp;сетка&nbsp;равна&nbsp;0,&nbsp;вернется&nbsp;1&nbsp;и&nbsp;наоборот<br>
+:return:</tt></dd></dl>
+
+<dl><dt><a name="GameLife-init_grids"><strong>init_grids</strong></a>(self)</dt><dd><tt>Создание&nbsp;и&nbsp;сохранение&nbsp;активной&nbsp;и&nbsp;неактивной&nbsp;сетки&nbsp;по&nbsp;умолчанию<br>
+:return:</tt></dd></dl>
+
+<dl><dt><a name="GameLife-run"><strong>run</strong></a>(self)</dt><dd><tt>Запуск&nbsp;игры<br>
+:return:</tt></dd></dl>
+
+<dl><dt><a name="GameLife-set_grid"><strong>set_grid</strong></a>(self, value=None, grid=0)</dt><dd><tt>Установить&nbsp;сразу&nbsp;всю&nbsp;сетку.&nbsp;Установите&nbsp;одно&nbsp;значение&nbsp;или&nbsp;случайный&nbsp;0/1.<br>
+Пример:<br>
+&nbsp;&nbsp;<a href="#GameLife-set_grid">set_grid</a>(0)&nbsp;#&nbsp;все&nbsp;клетки&nbsp;мертвы<br>
+&nbsp;&nbsp;<a href="#GameLife-set_grid">set_grid</a>(1)&nbsp;#&nbsp;все&nbsp;живы<br>
+&nbsp;&nbsp;<a href="#GameLife-set_grid">set_grid</a>()&nbsp;#&nbsp;случайные&nbsp;клиентки<br>
+&nbsp;&nbsp;<a href="#GameLife-set_grid">set_grid</a>(None)&nbsp;#&nbsp;так&nbsp;же&nbsp;сулчайное&nbsp;распределение<br>
+:param&nbsp;grid:&nbsp;Индекс&nbsp;сетки,&nbsp;для&nbsp;активного&nbsp;/&nbsp;неактивного&nbsp;(0&nbsp;или&nbsp;1)<br>
+:param&nbsp;value:&nbsp;Значение,&nbsp;чтобы&nbsp;установить&nbsp;для&nbsp;ячейки&nbsp;значение&nbsp;(0&nbsp;или&nbsp;1)<br>
+:return:</tt></dd></dl>
+
+<dl><dt><a name="GameLife-update_generation"><strong>update_generation</strong></a>(self)</dt><dd><tt>Проверьте&nbsp;состояние&nbsp;текущего&nbsp;поколения,&nbsp;подготовьте&nbsp;следующее&nbsp;поколение<br>
+:return:</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
